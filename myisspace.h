@@ -1,0 +1,1 @@
+int myisspace(char);
