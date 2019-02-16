@@ -7,7 +7,7 @@ int getwords(char* str){
 
   int word_count = 0;
   int index = 0;
-  printf("%s", str);
+  //printf("%s", str);
   while (myisspace(str[index]) == 1)
   {
     index++;
