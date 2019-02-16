@@ -1,1 +1,1 @@
-int getchars(char* str)
+int getchars(char* str);

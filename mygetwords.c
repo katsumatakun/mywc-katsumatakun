@@ -1,4 +1,6 @@
 #include "mygetwords.h"
+#include "myisspace.h"
+
 
 int getwords(char* str){
 

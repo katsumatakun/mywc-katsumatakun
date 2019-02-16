@@ -1,4 +1,5 @@
-#include "mygetchar"
+#include "mygetchar.h"
+#include "myisspace.h"
 
 int getchars(char* str){
 
