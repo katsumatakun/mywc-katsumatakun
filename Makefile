@@ -12,7 +12,7 @@ mywc.o: mywc.c $(OBJS2)
 mygetwords.o: mygetwords.c mygetwords.h myisspace.h
 	gcc -c mygetwords.c
 
-mygetchars.o: mygetchars.c mygetchars.h myisspace.h
+mygetchars.o: mygetchars.c mygetchars.h 
 	gcc -c mygetchars.c
 
 mygetlines.o: mygetlines.c mygetlines.h
