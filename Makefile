@@ -1,5 +1,5 @@
-OBJS = mygetwords.o mygetchars.o myisspace.o myprint.o
-OBJS2 = mygetwords.h mygetchars.h myprint.h
+OBJS = mygetwords.o mygetchars.o myisspace.o myprint.o mygetlines.o
+OBJS2 = mygetwords.h mygetchars.h myprint.h mygetlines.h
 
 all: mywc
 
@@ -14,6 +14,9 @@ mygetwords.o: mygetwords.c mygetwords.h myisspace.h
 
 mygetchars.o: mygetchars.c mygetchars.h myisspace.h
 	gcc -c mygetchars.c
+
+mygetlines.o: mygetlines.c mygetlines.h
+	gcc -c mygetlines.c
 
 myisspace.o: myisspace.c myisspace.h
 	gcc -c myisspace.c
