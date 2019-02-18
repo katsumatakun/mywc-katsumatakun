@@ -1,18 +1,22 @@
+#This is a Makefile for mywc
+
 OBJS = mygetwords.o mygetchars.o myisspace.o myprint.o mygetlines.o
-OBJS2 = mygetwords.h mygetchars.h myprint.h mygetlines.h
+HEDEARS = mygetwords.h mygetchars.h myprint.h mygetlines.h
 
 all: mywc
 
-mywc: mywc.o $(OBJS) $(OBJS2)
+mywc: mywc.o $(OBJS) $(HEADERS) myisspace.h
 	gcc -o mywc mywc.o $(OBJS)
 
-mywc.o: mywc.c $(OBJS2)
+#no need of myisspace.h since it is not included 
+mywc.o: mywc.c $(HEADERS)
 	gcc -c mywc.c
 
+#need myisspace.h since it is incuded
 mygetwords.o: mygetwords.c mygetwords.h myisspace.h
 	gcc -c mygetwords.c
 
-mygetchars.o: mygetchars.c mygetchars.h 
+mygetchars.o: mygetchars.c mygetchars.h
 	gcc -c mygetchars.c
 
 mygetlines.o: mygetlines.c mygetlines.h
