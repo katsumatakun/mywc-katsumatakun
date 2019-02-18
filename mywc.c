@@ -29,12 +29,15 @@ int main(int argc, char *argv[]){
     switch(opt){
     case 'l':
       l = 1;
+      sum_flags++;
       break;
     case 'w':
       w = 1;
+      sum_flags++;
       break;
     case 'c':
       c = 1;
+      sum_flags++;
       break;
     //default is in the case of invalid options. display help
     default:
@@ -43,7 +46,6 @@ int main(int argc, char *argv[]){
 
       }
   }
-  sum_flags = l + w + c;
 
   //if only flags are typed, but file names are not
   if(sum_flags+1 == argc){
