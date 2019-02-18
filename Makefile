@@ -5,10 +5,9 @@ HEDEARS = mygetwords.h mygetchars.h myprint.h mygetlines.h
 
 all: mywc
 
-mywc: mywc.o $(OBJS) $(HEADERS) myisspace.h
-	gcc -o mywc mywc.o $(OBJS)
+mywc: mywc.o $(OBJS) 
 
-#no need of myisspace.h since it is not included 
+#no need of myisspace.h since it is not included
 mywc.o: mywc.c $(HEADERS)
 	gcc -c mywc.c
 
