@@ -1,14 +1,15 @@
 #include "mygetchars.h"
-#include "myisspace.h"
-#include <stdio.h>
 
-int getchars(char* str){
+//accept string (array) of chars and return the number of chars
+// including escape keys
+//new line will not be counted. it will be added to num_chars by the line counter
+int mygetchars(char* str){
 
   int index = 0;
   int char_count = 0;
-  //printf("%s", str);
+
+  //terminate while loop when it finds newline, end of file(just in case), or exceeded index
   while(str[index] != '\n' && index < 255 && str[index] != '\0' ){
-    //if (myisspace(str[index]) == 0)
     char_count++;
     index++;
   }

@@ -1,32 +1,37 @@
 #include "mygetwords.h"
 #include "myisspace.h"
-#include <stdio.h>
 
-
+//accept string (array of characters and return the number of words)
 int mygetwords(char* str){
 
   int word_count = 0;
   int index = 0;
-  printf("%s", str);
+
+  //some escape keys before the first char of a line will be skiped
   while (myisspace(str[index]) == 1)
   {
     index++;
 
   }
-  while (str[index] != '\n' && str[index] != '\0' && index < 255  ){
 
+  //terminate while loop when it finds newline, end of file(just in case), or exceeded index
+  while (str[index] != '\n' && index < 255 && str[index] != '\0'){
+
+    //until finfing next escape key, keep readng next char
     while (myisspace(str[index]) == 0)
     {
-      //printf("%c",str[index] );
       index++;
     }
+
     word_count++;
+
+    //this prevents escape keys in a row
+    //e.g. \t\t 
     while (myisspace(str[index]) == 1)
     {
       index++;
 
     }
-    //printf("\n");
   }
 
   return word_count;

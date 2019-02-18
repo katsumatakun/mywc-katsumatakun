@@ -1,1 +1,2 @@
-int getlines(char* str);
+//function prototype for mygetline
+int mygetlines(char* str);
