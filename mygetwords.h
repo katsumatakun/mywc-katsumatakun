@@ -1,1 +1,2 @@
-int getwords(char* str);
+//function prototype for mygetwords
+int mygetwords(char*);
