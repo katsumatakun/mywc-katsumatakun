@@ -14,8 +14,8 @@ int mygetwords(char* str){
 
   }
 
-  //terminate while loop when it finds newline, end of file(just in case), or exceeded index
-  while (str[index] != '\n' && index < 255 && str[index] != '\0'){
+  //terminate while loop when it finds newline, or exceeded index
+  while (str[index] != '\n' && index < 255){
 
     //until finfing next escape key, keep readng next char
     while (myisspace(str[index]) == 0)
@@ -26,7 +26,7 @@ int mygetwords(char* str){
     word_count++;
 
     //this prevents escape keys in a row
-    //e.g. \t\t 
+    //e.g. \t\t
     while (myisspace(str[index]) == 1)
     {
       index++;
