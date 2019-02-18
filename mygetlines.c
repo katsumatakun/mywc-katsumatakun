@@ -8,7 +8,7 @@ int mygetlines(char* str){
 
   //while finish if it finds newline or if it reach the max number
   // of chars that str can hold
-  while(str[index] != '\n' && index < 255 && str[index] != '\0'){
+  while(str[index] != '\n' && str[index] != '\0'){
     index++;
   }
 

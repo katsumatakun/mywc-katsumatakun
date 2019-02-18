@@ -8,8 +8,8 @@ int mygetchars(char* str){
   int index = 0;
   int char_count = 0;
 
-  //terminate while loop when it finds newline, end of file(just in case), or exceeded index
-  while(str[index] != '\n' && index < 255 && str[index] != '\0' ){
+  //terminate while loop when it finds newline, end of file
+    while(str[index] != '\n' && str[index] != '\0' ){
     char_count++;
     index++;
   }
