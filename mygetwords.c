@@ -3,23 +3,32 @@
 #include <stdio.h>
 
 
-int getwords(char* str){
+int mygetwords(char* str){
 
   int word_count = 0;
   int index = 0;
-  //printf("%s", str);
+  printf("%s", str);
   while (myisspace(str[index]) == 1)
   {
     index++;
+
   }
-  while (str[index] != '\n'){
+  while (str[index] != '\n' && str[index] != '\0' && index < 255  ){
+
     while (myisspace(str[index]) == 0)
     {
+      //printf("%c",str[index] );
       index++;
     }
-    index++;
     word_count++;
+    while (myisspace(str[index]) == 1)
+    {
+      index++;
+
+    }
+    //printf("\n");
   }
+
   return word_count;
 
 }

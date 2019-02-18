@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
+#include "mygetlines.h"
 #include "mygetwords.h"
 #include "mygetchars.h"
 #include "myprint.h"
@@ -47,6 +48,11 @@ int main(int argc, char *argv[]){
     FILE *fp;
     char* fname = " ";
     char str[N];
+    for (int i = 0; i < 256;  i++)
+    {
+      str[i] = '\n';
+    }
+
     while (index_of_files < argc){
       fname = argv[index_of_files];
       num_files++;
@@ -58,24 +64,32 @@ int main(int argc, char *argv[]){
         }
       else{
           while(fgets(str, N, fp) != NULL){
-              //printf("aaa\n");
-              num_lines++;
-              int words = getwords(str);
+
+              //printf("%s\n", str);
+              int words = 0;
+              words = mygetwords(str);
               int chars = getchars(str);
-              //printf("%u\n", words);
-              //printf("%u\n", chars);
+              int lines = getlines(str);
+              //printf("%u\n", lines);
+              printf("%u\n", words);
+
+              num_lines = num_lines + lines;
               num_words = num_words + words;
               num_chars = num_chars + chars;
+              for (int i = 0; i < 256;  i++)
+              {
+                str[i] = '\n';
+              }
           }
           num_chars = num_chars + num_lines;
 
           total_lines = total_lines + num_lines;
           total_words = total_words + num_words;
           total_chars = total_chars + num_chars;
-          }
           myprint(flags, num_lines, num_words, num_chars, fname, l, w, c);
           index_of_files++;
           fclose(fp);
+          }
         }
       if (num_files > 1){
       myprint(flags, total_lines, total_words, total_chars, "total", l, w, c);

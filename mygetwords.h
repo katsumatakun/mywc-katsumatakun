@@ -1,1 +1,1 @@
-int getwords(char* str);
+int mygetwords(char*);
