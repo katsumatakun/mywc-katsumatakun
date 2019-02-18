@@ -53,7 +53,7 @@ int main(int argc, char *argv[]){
     return -1;
   }
 
-    int index_of_files = sum_flags+1; //the next index of the last flag
+    int index_of_files = optind; //the next index of the last flag
     FILE *fp;
     char* fname;
     char str[N];
