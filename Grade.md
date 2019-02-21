@@ -8,7 +8,7 @@
  correct program | 12    |10     
  correct code|  2|  1.5     
  style    |  3   |2
- Total|20|18.5
+ Total|22|18.5
 
  ## Comments
 
